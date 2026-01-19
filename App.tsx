@@ -189,7 +189,7 @@ function App() {
                     <span className="text-xs text-white block">n8n self-hosted • Claude/GPT-4 • Integrado CRM/Email</span>
                  </div>
                  <div className="mt-6">
-                    <Button fullWidth onClick={openModal}>ME INTERESA ESTE</Button>
+                    <Button fullWidth onClick={() => window.open('https://buy.stripe.com/00w7sKazu7Qr1KT7H47Re02', '_blank')}>ME INTERESA</Button>
                  </div>
                </div>
 
