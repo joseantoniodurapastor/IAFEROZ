@@ -24,7 +24,7 @@ const BloodParticles: React.FC = () => {
     window.addEventListener('resize', handleResize);
     handleResize();
 
-    // --- DEFINICIÓN DE CLASES (PRIMERO PARA EVITAR ERRORES) ---
+    // --- DEFINICIÓN DE CLASES ---
     
     // CLASE POLVO (SUSPENSIÓN)
     class Dust {
@@ -50,9 +50,11 @@ const BloodParticles: React.FC = () => {
         this.x += this.speedX;
         this.y += this.speedY;
 
+        // Rebote suave
         if (this.x < 0 || this.x > width) this.speedX *= -1;
         if (this.y < 0 || this.y > height) this.speedY *= -1;
         
+        // Turbulence noise
         this.x += (Math.random() - 0.5) * 0.2;
         this.y += (Math.random() - 0.5) * 0.2;
       }
@@ -109,7 +111,7 @@ const BloodParticles: React.FC = () => {
       }
     }
 
-    // --- CONFIGURACIÓN E INICIALIZACIÓN ---
+    // --- INIT ---
     const DUST_COUNT = 150; 
     const DRIPS_COUNT = 80; 
     
@@ -117,7 +119,7 @@ const BloodParticles: React.FC = () => {
     const dripsArray: Drip[] = [];
 
     const init = () => {
-      dustArray.length = 0; // Clear arrays on re-init if needed
+      dustArray.length = 0; 
       dripsArray.length = 0;
       for (let i = 0; i < DUST_COUNT; i++) {
         dustArray.push(new Dust());
@@ -128,6 +130,7 @@ const BloodParticles: React.FC = () => {
     };
 
     const animate = () => {
+      // Limpiar canvas con transparencia total
       ctx.clearRect(0, 0, width, height);
       
       dustArray.forEach(dust => {
@@ -140,9 +143,9 @@ const BloodParticles: React.FC = () => {
         drip.draw();
       });
 
-      // Vignette effect
+      // Vignette effect (Opcional, pero agresivo)
       const gradient = ctx.createRadialGradient(width/2, height/2, height/3, width/2, height/2, height);
-      gradient.addColorStop(0, "transparent");
+      gradient.addColorStop(0, "rgba(0,0,0,0)");
       gradient.addColorStop(1, "rgba(50, 0, 0, 0.4)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
@@ -162,8 +165,7 @@ const BloodParticles: React.FC = () => {
   return (
     <canvas 
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 mix-blend-screen"
-      style={{ background: '#000000' }} 
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]"
     />
   );
 };
