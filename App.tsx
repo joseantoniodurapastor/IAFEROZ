@@ -32,7 +32,7 @@ function App() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="bg-void min-h-screen text-white font-sans selection:bg-blood selection:text-white">
+    <div className="min-h-screen text-white font-sans selection:bg-blood selection:text-white">
       <BloodParticles />
       <Modal isOpen={isModalOpen} onClose={closeModal} />
       
