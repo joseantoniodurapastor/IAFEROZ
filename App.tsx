@@ -402,33 +402,39 @@ function App() {
          <footer className="bg-black border-t border-gray-900 py-12 px-4">
             <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-12">
                <div>
-                  <h3 className="font-display font-bold text-white mb-4">IA FEROZ</h3>
-                  <p className="text-xs text-gray-500">Automatización que muerde.</p>
+                  <h3 className="font-display font-bold text-white mb-4 uppercase">IA FEROZ</h3>
+                  <p className="text-xs text-gray-500">Automatización IA que muerde y ahorra dinero de verdad.</p>
+                  <div className="mt-4">
+                     <a href="https://www.iaferoz.com/" className="text-blood font-mono text-[10px] hover:underline">WWW.IAFEROZ.COM</a>
+                  </div>
                </div>
                <div>
                   <h4 className="font-bold text-white text-sm mb-4">SERVICIOS</h4>
                   <ul className="space-y-2 text-xs text-gray-500">
-                     <li>Sistema Feroz 7D</li>
-                     <li>Soporte Extendido</li>
+                     <li><button onClick={() => scrollToSection('oferta')} className="hover:text-blood transition-colors">Sistema Feroz 7D</button></li>
+                     <li><button onClick={openModal} className="hover:text-blood transition-colors">Auditoría Gratuita</button></li>
+                     <li><button onClick={() => scrollToSection('calculator')} className="hover:text-blood transition-colors">Calculadora ROI</button></li>
                   </ul>
                </div>
                <div>
                   <h4 className="font-bold text-white text-sm mb-4">RECURSOS</h4>
                   <ul className="space-y-2 text-xs text-gray-500">
-                     <li>Calculadora ROI</li>
-                     <li>Casos Estudio</li>
+                     <li><button onClick={() => scrollToSection('casos')} className="hover:text-blood transition-colors">Casos de Estudio</button></li>
+                     <li><a href="mailto:hola@iaferoz.es" className="hover:text-blood transition-colors">Soporte Directo</a></li>
+                     <li><a href="https://x.com/iaferoz" target="_blank" rel="noopener noreferrer" className="hover:text-blood transition-colors">Twitter / X</a></li>
                   </ul>
                </div>
                <div>
                   <h4 className="font-bold text-white text-sm mb-4">LEGAL</h4>
                   <ul className="space-y-2 text-xs text-gray-500">
-                     <li>Privacidad</li>
-                     <li>Términos</li>
+                     <li><a href="#privacy" className="hover:text-blood transition-colors">Privacidad</a></li>
+                     <li><a href="#terms" className="hover:text-blood transition-colors">Términos</a></li>
+                     <li><a href="#cookies" className="hover:text-blood transition-colors">Cookies</a></li>
                   </ul>
                </div>
             </div>
             <div className="text-center border-t border-gray-900 pt-8 text-xs text-gray-600 font-mono uppercase">
-               © 2025 IA Feroz - Durá Ventures S.L.
+               © {new Date().getFullYear()} IA Feroz - Durá Ventures S.L.
                <br />
                <span className="text-blood/50 mt-2 block">El mercado es de lobos. Nosotros somos más feroces.</span>
             </div>
