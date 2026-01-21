@@ -40,7 +40,7 @@ function App() {
          <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                  <img src="/favicon.png" alt="IA FEROZ Logo" className="h-12 w-auto" />
+                  <img src="/iaferozlogo.png" alt="IA FEROZ Logo" className="h-12 w-auto" />
                </div>
                <div className="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest text-ash">
                   <button onClick={() => scrollToSection('calculator')} className="hover:text-blood transition-colors">Calculadora</button>
