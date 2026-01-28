@@ -230,7 +230,7 @@ function App() {
             <Section className="bg-charcoal/30">
                <div className="max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-10">
-                     POR QUÉ LAMBDA AUTOMATIONS <span className="text-blood">NO PUEDE COMPETIR</span>
+                     POR QUÉ OTRAS AGENCIAS DE AUTOMATIZACIÓN <span className="text-blood">NO PUEDEN COMPETIR</span>
                   </h2>
                   <Comparison />
                </div>
@@ -358,7 +358,7 @@ function App() {
                   <h2 className="text-3xl font-display font-bold mb-10 text-center">FAQ PAIN-BASED</h2>
                   <div className="space-y-6">
                      {[
-                        { q: "¿Por qué 600€ si otros cobran miles?", a: "Lambda cobra 3-10K por cloud caro y educación. Nosotros somos ejecución pura y self-hosted. Sin inflar." },
+                        { q: "¿Por qué 600€ si otros cobran miles?", a: "Otras agencias cobran 3-10K por cloud caro y educación. Nosotros somos ejecución pura y self-hosted. Sin inflar." },
                         { q: "¿Cómo sé que no es un template genérico?", a: "Auditoría de TU negocio primero. 600€ es implementación personalizada, un template cuesta 50€." },
                         { q: "¿Necesito equipo técnico?", a: "No. Solo necesitas ganas de ahorrar. Nosotros ponemos el expertise técnico. Tú usas el sistema." },
                         { q: "¿Funciona con mi CRM?", a: "Sí. HubSpot, Salesforce, Pipedrive, Gmail, Outlook, Notion, Airtable, Stripe... Si tiene API, lo conectamos." }

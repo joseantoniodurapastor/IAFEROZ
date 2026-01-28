@@ -8,7 +8,7 @@ const Comparison: React.FC = () => {
         <thead>
           <tr>
             <th className="p-4 bg-transparent"></th>
-            <th className="p-4 bg-gray-900 text-gray-400 font-display uppercase tracking-wider text-xl text-center border-t-4 border-gray-700">Lambda Automations</th>
+            <th className="p-4 bg-gray-900 text-gray-400 font-display uppercase tracking-wider text-xl text-center border-t-4 border-gray-700">OTRAS AGENCIAS DE AUTOMATIZACIÓN</th>
             <th className="p-4 bg-blood/10 text-white font-display uppercase tracking-wider text-2xl text-center border-t-4 border-blood relative overflow-hidden">
               <span className="relative z-10 text-glow">IA Feroz</span>
               <div className="absolute inset-0 bg-blood/5 animate-pulse"></div>
@@ -33,13 +33,13 @@ const Comparison: React.FC = () => {
           ))}
         </tbody>
         <tfoot>
-            <tr>
-                <td></td>
-                <td></td>
-                <td className="p-4 text-center font-bold text-blood uppercase italic">
-                    La verdad duele. <br/> Pero te ahorra dinero.
-                </td>
-            </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td className="p-4 text-center font-bold text-blood uppercase italic">
+              La verdad duele. <br /> Pero te ahorra dinero.
+            </td>
+          </tr>
         </tfoot>
       </table>
     </div>
