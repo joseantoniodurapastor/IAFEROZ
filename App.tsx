@@ -7,10 +7,13 @@ import Button from './components/ui/Button';
 import Calculator from './components/Calculator';
 import Comparison from './components/Comparison';
 import Modal from './components/Modal';
+import LegalModal from './components/LegalModal';
+import CookieBanner from './components/CookieBanner';
 
 function App() {
    const [isNavOpen, setIsNavOpen] = useState(false);
    const [isModalOpen, setIsModalOpen] = useState(false);
+   const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' | 'cookies' }>({ isOpen: false, type: 'privacy' });
 
    // Smooth scroll handler dealing with fixed header offset
    const scrollToSection = (id: string) => {
@@ -35,6 +38,8 @@ function App() {
       <div className="min-h-screen text-white font-sans selection:bg-blood selection:text-white">
          <BloodParticles />
          <Modal isOpen={isModalOpen} onClose={closeModal} />
+         <LegalModal isOpen={legalModal.isOpen} onClose={() => setLegalModal({ ...legalModal, isOpen: false })} type={legalModal.type} />
+         <CookieBanner onOpenCookiesPolicy={() => setLegalModal({ isOpen: true, type: 'cookies' })} />
 
          {/* HEADER / NAV */}
          <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -323,7 +328,7 @@ function App() {
                         ))}
                      </ul>
                      <p className="mt-8 text-sm font-mono border-t border-black pt-4">
-                        Si buscas postureo, ve a ver a Agustín Medina. <br />
+                        Si buscas postureo, ve a ver videocursos en Youtube. <br />
                         Si buscas ahorrar 20.000€/año, quédate aquí.
                      </p>
                   </div>
@@ -391,7 +396,7 @@ function App() {
                      </a>
                   </div>
                   <div className="mt-12 pt-12 border-t border-gray-900 text-xs font-mono text-gray-600">
-                     Telegram: @iaferoz_soporte • Email: hola@iaferoz.es • Respuesta &lt;2h
+                     Escríbenos a hola@iaferoz.com • Respuesta &lt;2h
                   </div>
                </div>
             </Section>
@@ -427,9 +432,9 @@ function App() {
                <div>
                   <h4 className="font-bold text-white text-sm mb-4">LEGAL</h4>
                   <ul className="space-y-2 text-xs text-gray-500">
-                     <li><a href="#privacy" className="hover:text-blood transition-colors">Privacidad</a></li>
-                     <li><a href="#terms" className="hover:text-blood transition-colors">Términos</a></li>
-                     <li><a href="#cookies" className="hover:text-blood transition-colors">Cookies</a></li>
+                     <li><button onClick={() => setLegalModal({ isOpen: true, type: 'privacy' })} className="hover:text-blood transition-colors">Privacidad</button></li>
+                     <li><button onClick={() => setLegalModal({ isOpen: true, type: 'terms' })} className="hover:text-blood transition-colors">Términos</button></li>
+                     <li><button onClick={() => setLegalModal({ isOpen: true, type: 'cookies' })} className="hover:text-blood transition-colors">Cookies</button></li>
                   </ul>
                </div>
             </div>
